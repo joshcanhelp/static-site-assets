@@ -1,9 +1,24 @@
-form
+.form-standard
 
 	label
 		font-size: $text_size_reg
 		font-weight: bold
-		display: block
+
+
+		&.field-text-reg
+			display: block
+			padding: 0.4em 0
+
+			.label-text
+				display: block
+				margin: 0 0 0.2em
+
+		&.field-radio-button
+			+rounded(3px)
+			display: inline-block
+			margin: 0 0.5em 0.5em 0
+			padding: 0.5em 0.8em
+			background: $c_gray_light
 
 	input[type=submit],
 	button
@@ -11,11 +26,11 @@ form
 
 	input[type=submit].button-cta,
 	button.button-cta
-		@extend .button_cta
+		@extend %button_cta
 
 	input[type=submit].button-disabled,
 	button.button-disabled
-		@extend .button_disabled
+		@extend %button_disabled
 
 	input[type=text],
 	input[type=url],

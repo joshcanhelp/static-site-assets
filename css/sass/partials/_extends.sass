@@ -47,29 +47,44 @@
 // Header styles
 
 %header_1
-	font-size: 4em
+	font-size: 3.2em
 	font-weight: $weight_normal
 	line-height: 1.12em
+
+	@media (max-width: $break_mid)
+		font-size: 2.4em
 
 %header_2
 	font-size: 2.3em
 	font-weight: $weight_normal
 	line-height: 1.18em
 
+	@media (max-width: $break_mid)
+		font-size: 2em
+
 %header_3
 	font-size: 2em
 	font-weight: $weight_normal
 	line-height: 1.21em
+
+	@media (max-width: $break_mid)
+		font-size: 1.7em
 
 %header_4
 	font-size: 1.6em
 	font-weight: $weight_normal
 	line-height: 1.27em
 
+	@media (max-width: $break_mid)
+		font-size: 1.4em
+
 %header_5
 	font-size: 1.5em
 	font-weight: $weight_bold
 	line-height: 1.28em
+
+	@media (max-width: $break_mid)
+		font-size: 1.2em
 
 %header_6
 	font-size: 1.1em
@@ -103,7 +118,7 @@
 
 // Buttons
 
-%button
+.button
 	+rounded(1px)
 	+gradient(darken($c_bg_lightest, 5), darken($c_bg_lightest, 10))
 	display: inline-block
@@ -123,7 +138,7 @@
 
 %button_cta
 	@extend .button
-	+gradient(lighten($c_main_red, 5), $c_main_red)
+	+gradient(lighten($c_brand_twitter, 5), $c_brand_twitter)
 	color: white
 
 %button_disabled
