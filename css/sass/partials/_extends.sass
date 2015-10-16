@@ -1,0 +1,161 @@
+// Clear fix
+
+
+
+// Icons
+
+%icon_styles
+	@extend .font_smoothing
+	font-family: "fontello"
+	font-style: normal
+	font-weight: normal
+
+	display: inline-block
+	text-decoration: inherit
+	width: 1em
+	text-align: center
+	font-variant: normal
+	text-transform: none
+	line-height: 1em
+	vertical-align: middle
+
+// Font-smoothing
+
+%font_smoothing
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004)
+
+
+// Columns
+
+%three_column
+	+responsive-col(29.667%, left)
+	padding: 1.5%
+	margin-left: 1%
+
+	&:first-child
+		margin-left: 0
+
+%two_column
+	+responsive-col(46%, left)
+	margin-left: 8%
+
+	&:first-child
+		margin-left: 0
+
+// Header styles
+
+%header_1
+	font-size: 4em
+	font-weight: $weight_normal
+	line-height: 1.12em
+
+%header_2
+	font-size: 2.3em
+	font-weight: $weight_normal
+	line-height: 1.18em
+
+%header_3
+	font-size: 2em
+	font-weight: $weight_normal
+	line-height: 1.21em
+
+%header_4
+	font-size: 1.6em
+	font-weight: $weight_normal
+	line-height: 1.27em
+
+%header_5
+	font-size: 1.5em
+	font-weight: $weight_bold
+	line-height: 1.28em
+
+%header_6
+	font-size: 1.1em
+	font-weight: $weight_bold
+	line-height: 1.28em
+
+
+// Card styles
+
+%card_style
+	@extend .shadow_light
+	+rounded(2px)
+	background: $c_white
+	border: 1px solid $c_white
+	text-decoration: none
+	box-sizing: border-box
+	vertical-align: middle
+	border-top-color: $c_gray_lightest
+
+// Standard shadows
+
+%shadow_light
+	-moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+
+%shadow_medium
+	-moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15)
+	-webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15)
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15)
+
+// Buttons
+
+%button
+	+rounded(1px)
+	+gradient(darken($c_bg_lightest, 5), darken($c_bg_lightest, 10))
+	display: inline-block
+	padding: 0.2em 0.6em 0.3em
+	text-decoration: none
+	border: none
+	line-height: 1.8em
+	font-family: $font_main
+	text-align: center
+	font-size: 1em
+	-webkit-appearance: none
+	color: $c_text
+	cursor: pointer
+
+	&:hover
+		text-decoration: none
+
+%button_cta
+	@extend .button
+	+gradient(lighten($c_main_red, 5), $c_main_red)
+	color: white
+
+%button_disabled
+	@extend .button
+	background: $c_gray_light_medium
+	cursor: default
+
+%button_view
+	@extend .button
+	+rounded(1px)
+	border: 2px solid $c_main_blue
+	text-transform: uppercase
+	color: $c_main_blue
+	font-size: $text_size_lrg
+	text-align: left
+	padding: 0.3em 0.9em
+	background: $c_gray_lightest
+
+	&:hover
+		background: $c_white
+
+	i
+		margin-top: -0.13em
+		float: right
+
+%button_add
+	+icon-after('\e80d')
+	+rounded(3px)
+	font-weight: bold
+	margin-top: 20px
+	text-decoration: none
+	display: inline-block
+	padding: 0.3em 0.4em
+	background: $c_gray_light
+	font-size: $text_size_reg

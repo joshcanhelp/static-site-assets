@@ -1,0 +1,198 @@
+@import "libs/sanitize"
+
+@import "partials/variables"
+@import "partials/mixins"
+@import "partials/icons"
+@import "partials/extends"
+@import "partials/forms"
+
+//
+// Resets and defaults
+//
+
+body,
+html,
+div,
+section,
+aside,
+header,
+footer,
+article
+	+no-space
+
+.screen-reader-text
+	display: none
+
+html,
+body
+	@extend %font_smoothing
+	background: $c_gray_lightest
+	font-family: $font_main
+	font-size: $text_size_reg
+	color: $c_text
+	font-weight: $weight_normal
+
+a
+	color: $c_text
+
+	img
+		border: 0
+
+ul,
+ol
+	+no-space
+	list-style-type: none
+
+strong
+	font-weight: $weight_bold
+
+h1
+	@extend %header_1
+
+//
+// "Modern" clearfix
+//
+
+.cf
+	zoom: 1
+
+	&:before,
+	&:after
+		content: ""
+		display: table
+
+	&:after
+		clear: both
+
+//
+// Outer and inner wrappers to allow different sections with different
+// background colors
+//
+
+.row-outer
+	width: 100%
+	min-width: $min_width
+	padding: 1em 0
+
+	.row-inner
+		@extend .cf
+		width: 94%
+		padding-left: 2%
+		padding-right: 2%
+		margin: 0 auto
+		min-width: $min_width
+		max-width: $max_width
+		position: relative
+
+		&.slim
+			max-width: $max_width / 2
+
+
+//
+// Body content styles
+// General typography and spacing for "content"
+//
+
+.the-content
+	overflow: auto
+
+	img
+		max-width: 100%
+		height: auto !important
+
+	p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote
+
+		&:first-child
+			margin-top: 0
+
+		&:last-child
+			margin-bottom: 0
+
+	p,
+	li,
+	dd,
+	div
+		line-height: $line_h_reg
+
+		*
+			line-height: inherit
+
+	p.body-text-large
+		font-size: $text_size_lrg
+
+	ul,
+	ol
+		padding-left: 1.5em
+		margin: 0 0 1em
+
+		li
+			margin: 1em 0 0
+
+	ul
+		list-style-type: disc
+
+		ul
+			list-style-type: circle
+
+			ul
+				list-style-type: square
+
+	ol
+		list-style-type: decimal
+
+	a
+		color: $c_main_red
+
+	h2
+		@extend .header_2
+
+	h3
+		@extend .header_3
+
+	h4
+		@extend .header_4
+
+	h5
+		@extend .header_5
+
+	h6
+		@extend .header_6
+
+	hr
+		@extend .h_break
+
+	blockquote
+		margin: 2em 0
+		padding: 1.5em 1.5em 0
+		font-size: $text_size_lrg
+		background: $c_gray_lightest
+		border-left: 1px solid $c_gray_light_medium
+		position: relative
+
+		p
+			margin: 0
+			padding: 0 0 1.5em
+
+	figure
+		margin: 2em 0
+		max-width: 100%
+
+		&.alignleft
+			margin: 0 1.5em 1em 0
+
+		&.alignright
+			margin: 0 0 1em 1.5em
+
+		&.aligncenter
+			margin-left: auto
+			margin-right: auto
+
+	dl
+		margin: 0
+
+		dt
+			font-weight: $weight_bold
+			margin-bottom: 0.5em
+
+		dd
+			margin: 0 0 1em 0.5em
